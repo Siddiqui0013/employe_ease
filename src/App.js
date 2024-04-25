@@ -4,7 +4,7 @@ import Profile from "./pages/Profile";
 import ForgotPass from "./pages/ForgotPass";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
-
+import Navbar from "./components/Navbar"
 
 import './App.css';
 
@@ -12,6 +12,7 @@ function App() {
   return (
     <>
     <Router>
+      <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="Profile" element={<Profile/>}></Route>
