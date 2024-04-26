@@ -5,7 +5,7 @@ import ForgotPass from "./pages/ForgotPass";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar"
-
+import Categories from "./pages/Categories"
 import './App.css';
 
 function App() {
@@ -19,8 +19,7 @@ function App() {
         <Route path="ForgotPass" element={<ForgotPass/>}></Route>
         <Route path="Signin" element={<Signin/>}></Route>
         <Route path="Signup" element={<Signup/>}></Route>
-        <Route path="/" element={<Home/>}></Route>
-
+        <Route path="Categories" element={<Categories/>}></Route>
       </Routes>
     </Router>
      {/* <p className="text-3xl font-bold underline">React App</p> */}
