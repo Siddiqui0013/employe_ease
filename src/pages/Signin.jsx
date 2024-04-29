@@ -1,69 +1,39 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Signin() {
+
+  const nav = useNavigate()
   return (
 
+    <div className="body">
     <div className="container">
       <div className="signin">
 
         <h1>Sign-in</h1>
         
         <div className="text">
-          <input type="text" placeholder="Enter your Plain Text" />
+          <input type="text" placeholder="Enter your email" />
         </div>
 
         <div className="key">
-          <input type="number" min="-26" max="26" placeholder="Enter Key (-26 to +26)" />
+          <input type="number" placeholder="Enter Password" />
         </div>
 
         <div className="button">
-          <button className="btn">Encrypt</button>
-        </div>
-
-        <div className="encrypted">
-          <div className="solutionText">
-            <h3>The Encrypted text is :</h3>
-          </div>
-          <div className="solInput">
-            <input type="text" readOnly />
-          </div>
+          <button className="btn bg-blue-500">Sign in</button>
+          <p className="text-center mb-2">OR</p>
+  <button className="btn flex justify-around items-center bg-blue-500"><img width="24" height="24" src="https://img.icons8.com/ios/50/google-logo--v1.png" alt="google-logo--v1"/><p>Sign-in with Google</p></button>
         </div>
 
         <div className="toDecrypt">
-          <p>Want to Decrypt a Cipher ?</p>
-          <button className="decryptBtn">Decrypt</button>
+          <p>Dont have an account ?</p>
+          <button className="decryptBtn bg-blue-500" onClick={()=>(nav("/Signup"))}>Sign-up</button>
         </div>
+        <div className="forPass text-red-500 font-semibold">Forget Password ? </div>
       
       </div>
-
-      <div className="decrypt">
-
-        <h1>Decrypt Cipher Text</h1>
-        
-        <div className="text">
-          <input type="text" placeholder="Enter your Cipher Text" />
-        </div>
-
-        <div className="key">
-          <input type="text" placeholder="Enter Key (-26 to +26)" />
-        </div>
-
-        <div className="button">
-          <button className="btn">Decrypt</button>
-        </div>
-
-        <div className="encrypted">
-          <div className="solutionText">
-            <h3>The Encrypted text is :</h3>
-          </div>
-          <input type="text" readOnly />
-        </div>
-
-        <div className="toDecrypt">
-          <p>Want to Encrypt a Plain text?</p>
-          <button className="decryptBtn">Encrypt</button>
-        </div>
-      </div> 
+    </div>
     </div>
 
   )
