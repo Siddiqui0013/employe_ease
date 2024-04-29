@@ -89,7 +89,8 @@ a:hover{
 
 
 @media only screen and (max-width: 600px) {
-    .homeli{
-        display: none;
-  }
+   .container{
+    max-width: 90%;
+    padding: 20px;
+   }
 }

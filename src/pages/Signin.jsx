@@ -1,7 +1,20 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function Signin() {
+const [FormData, setFormData] = useState({
+  email:"",
+  password:""
+})
+
+const {email,password} = FormData
+
+function onChange (e){
+  setFormData((prevData)=>({
+    ...prevData,
+    [e.target.id] : e.target.value,
+  }))
+}
 
   const nav = useNavigate()
   return (
@@ -9,15 +22,16 @@ export default function Signin() {
     <div className="body">
     <div className="container">
       <div className="signin">
+        <form action="">
 
         <h1>Sign-in</h1>
         
         <div className="text">
-          <input type="text" placeholder="Enter your email" />
+          <input type="email" id='email' value={email} onChange={onChange} placeholder="Enter your email"/>
         </div>
 
         <div className="key">
-          <input type="number" placeholder="Enter Password" />
+          <input type="password" id='password' placeholder="Enter Password" />
         </div>
 
         <div className="button">
@@ -31,10 +45,12 @@ export default function Signin() {
           <button className="decryptBtn bg-blue-500" onClick={()=>(nav("/Signup"))}>Sign-up</button>
         </div>
         <div className="forPass text-red-500 font-semibold">Forget Password ? </div>
-      
+        </form>
       </div>
     </div>
     </div>
 
+
   )
+
 }

@@ -8,13 +8,13 @@ export default function Signup() {
 
     <div className="body">
 
-    <div className="container">
+    <div className="container sm:w-20">
     <div className="signup">
 
 <h1>Sign-up</h1>
 
 <div className="text">
-  <input type="email" placeholder="Enter your email" />
+  <input type="email"  placeholder="Enter your email" />
 </div>
 
 <div className="key">

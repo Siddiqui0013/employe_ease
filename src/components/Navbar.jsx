@@ -22,7 +22,7 @@ export default function Navbar() {
         <div className="menu">
           <ul className="flex space-x-10">
 
-          <li onClick={() => nav("/")} className={`homeli cursor-pointer border-b-4 py-6 font-semibold border-b-transparent ${pathMatch("/") ? "text-black border-b-blue-500" : "text-blue-500"}`}>Home</li>
+          <li onClick={() => nav("/")} className={`hidden  md:block cursor-pointer border-b-4 py-6 font-semibold border-b-transparent ${pathMatch("/") ? "text-black border-b-blue-500" : "text-blue-500"}`}>Home</li>
 
 
             <li onClick={() => nav("/categories")} className={`cursor-pointer border-b-4 py-6 font-semibold border-b-transparent ${pathMatch("/categories") ? "text-black border-b-blue-500" : "text-blue-500"}`}>Categories</li>
