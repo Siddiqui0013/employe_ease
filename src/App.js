@@ -6,6 +6,8 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar"
 import Categories from "./pages/Categories"
+import { Bounce, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 function App() {
@@ -22,6 +24,19 @@ function App() {
         <Route path="Categories" element={<Categories/>}></Route>
       </Routes>
     </Router>
+    <ToastContainer
+position="bottom-center"
+autoClose={3000}
+hideProgressBar={false}
+newestOnTop
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+transition={Bounce}
+/>
      {/* <p className="text-3xl font-bold underline">React App</p> */}
     </>
   );

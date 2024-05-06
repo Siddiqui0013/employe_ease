@@ -10,12 +10,14 @@ function onChange (e){{
   }
 }
   const nav = useNavigate()
+
+
   return (
 
     <div className="body">
     <div className="container">
       <div className="signin">
-        <form action="">
+        <form>
 
         <h1>Forgot Password</h1>
         
