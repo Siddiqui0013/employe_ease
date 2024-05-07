@@ -1,15 +1,28 @@
 import React,{useState} from 'react'
 import { useNavigate,Link } from 'react-router-dom'
-import OAuth from '../components/OAuth';
+import { sendPasswordResetEmail,fetchSignInMethodsForEmail,getAuth } from 'firebase/auth';
+import { toast } from 'react-toastify';
+
 
 export default function ForgotPass() {
 const [email, setEmail] = useState("")
 
-function onChange (e){{
+function onChange (e){
   setEmail(e.target.value)
-  }
 }
   const nav = useNavigate()
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const auth = getAuth();
+      await sendPasswordResetEmail(auth, email);
+      toast.success("Reset link sent Successfully");
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to send reset email");
+    }
+  };
 
 
   return (
@@ -17,7 +30,7 @@ function onChange (e){{
     <div className="body">
     <div className="container">
       <div className="signin">
-        <form>
+        <form onSubmit={onSubmit}>
 
         <h1>Forgot Password</h1>
         
@@ -28,8 +41,6 @@ function onChange (e){{
         <div className="button">
           <button  type="submit" className="btn bg-blue-500">Send Reset email</button>
           </div>
-          
-        <OAuth/>
 
         <div className="toDecrypt">
           <p>Dont have an account ?</p>
