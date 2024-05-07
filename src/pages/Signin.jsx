@@ -2,12 +2,17 @@ import React,{useState} from 'react'
 import { useNavigate,link, Link } from 'react-router-dom'
 import { IoIosEyeOff,IoMdEye } from "react-icons/io";
 import OAuth from '../components/OAuth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { toast } from 'react-toastify';
+
 
 export default function Signin() {
 const [FormData, setFormData] = useState({
   email:"",
   password:""
 })
+
+const nav = useNavigate()
 
 const {email,password} = FormData
 
@@ -19,16 +24,30 @@ function onChange (e){
 }
 
   const [showPass, setshowPass] = useState(true)
+  const onSubmit = async (e)=> {
+    e.preventDefault()
+    try {
+      const auth = getAuth()
+      const userDetails = await signInWithEmailAndPassword(auth,email,password)
+      if(userDetails.user){
+        toast.success("Signed in Successfully")
+        nav("/")
+      }
+    } catch (error) {
+      console.log(error)
+      toast.error("no")
+    }
+  }
 
 
 
-  const nav = useNavigate()
+
   return (
 
     <div className="body">
     <div className="container">
       <div className="signin">
-        <form action="">
+        <form onSubmit={onSubmit} action="">
 
         <h1>Sign-in</h1>
         

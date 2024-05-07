@@ -26,7 +26,7 @@ export default function OAuth() {
 
 
 
-  // console.log(user)
+  console.log(user)
     } catch (error) {
       // toast.error("Error")
       console.log(error)
