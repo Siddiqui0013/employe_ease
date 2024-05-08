@@ -53,7 +53,7 @@ export default function Signup() {
         toast.success("Successfully Signed up")
         nav("/")
       } catch (error) {
-        // console.log(error)
+        console.log(error)
         toast.error("No!")
       }
 

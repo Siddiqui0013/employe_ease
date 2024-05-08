@@ -1,6 +1,7 @@
+
 import React,{useState} from 'react'
 import { useNavigate,Link } from 'react-router-dom'
-import { sendPasswordResetEmail,fetchSignInMethodsForEmail,getAuth } from 'firebase/auth';
+import { sendPasswordResetEmail,getAuth } from 'firebase/auth';
 import { toast } from 'react-toastify';
 
 

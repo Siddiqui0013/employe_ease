@@ -1,10 +1,13 @@
 import { getAuth, signInWithPopup,GoogleAuthProvider } from 'firebase/auth'
 import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { db } from '../firebase'
 
 export default function OAuth() {
+
+  const nav = useNavigate()
 
   async function onBtnClick() {
     try {
@@ -22,11 +25,10 @@ export default function OAuth() {
       email : user.email,
       timestamp : serverTimestamp()
     })
-  }
-
-
-
-  console.log(user)
+  } 
+    toast.success("Successfull")
+    nav("/")
+  // console.log(user)
     } catch (error) {
       // toast.error("Error")
       console.log(error)
