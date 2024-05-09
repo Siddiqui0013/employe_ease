@@ -12,7 +12,7 @@ export default function Search() {
               <input type="text" className='bg-transparent text-red-500 font-bold focus:outline-none w-full' placeholder= 'Search Job Here....' />
             </div>
 
-            <button className='bg-blue-500 p-1 text-xl px-8 rounded-[10px] text-white cursor-pointer'>
+            <button className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
             Search</button>
 
           </div>
