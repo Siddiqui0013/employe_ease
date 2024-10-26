@@ -1,7 +1,10 @@
 import React from 'react'
+import Demo from './Demo'
 
 export default function categories() {
   return (
-    <div>categories</div>
+    <div>
+      {/* <Demo/> */}
+    </div>
   )
 }

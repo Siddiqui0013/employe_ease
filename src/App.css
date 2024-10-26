@@ -89,8 +89,17 @@ a:hover{
 
 
 @media only screen and (max-width: 600px) {
+    .body{
+        width: 99vw;
+    }
    .container{
     max-width: 90%;
     padding: 20px;
+   }
+   .firstDiv{
+    /* visibility: hidden; */
+    flex-direction: column;
+    width: 95vw;
+    margin: auto;
    }
 }
